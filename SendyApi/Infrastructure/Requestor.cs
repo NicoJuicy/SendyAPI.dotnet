@@ -97,23 +97,7 @@ namespace SendyApi.Infrastructure
             {
                 throw;
             }
-            //catch (WebException webException)
-            //{
-            //    if (webException.Response != null)
-            //    {
-            //        var statusCode = ((HttpWebResponse)webException.Response).StatusCode;
-
-            //        var stripeError = new Omnisoft.Exceptions.OmnisoftError();
-
-            //        if (requestMessage.RequestUri.ToString().Contains("oauth"))
-            //            stripeError = Mapper<Omnisoft.Exceptions.OmnisoftError>.MapFromJson(ReadStream(webException.Response.GetResponseStream()));
-            //        else
-            //            stripeError = Mapper<Omnisoft.Exceptions.OmnisoftError>.MapFromJson(ReadStream(webException.Response.GetResponseStream()), "error");
-
-            //    }
-
-            //    throw;
-            //}
+           
         }
 
         internal static async Task<Infrastructure.ResponseContent> ExecuteWebRequestCore(HttpRequestMessage requestMessage)
@@ -153,14 +137,7 @@ namespace SendyApi.Infrastructure
                         "Http Status= {0} - {1}", (int)response.StatusCode,
                         rm.GetString(response.StatusCode.ToString())));
                 }
-                //else if (response.StatusCode == HttpStatusCode.ServiceUnavailable)
-                //{
-                //    throw new InvalidOperationException("The API is currently unavailable. Update in progress.. Please wait +/- 15 minutes");
-                //}
-                //else {
-
-                //    throw new InvalidOperationException(string.Format("{0}-{1}", (int)response.StatusCode,response.StatusCode.ToString()));//await response.Content.ReadAsStringAsync());
-                //}
+                
 
             }
         }
