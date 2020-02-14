@@ -39,7 +39,7 @@ namespace SendyApi
             var url = authority + Urls.CampaignCreateAndSend;
             var body = ParameterBuilder.GetBodyParameters(request);
             var response = await Requestor.Post(url, api_key, body);
-            //throw new Exception("Not yet finished");
+         
             return response.asCampaignResponse();
         }
 
